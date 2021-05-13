@@ -27,4 +27,17 @@ public class FacultyController {
 	 Faculty f = FacultyDAO.getFacultyById(id);
 	 return new ResponseEntity<Faculty>(f,HttpStatus.OK);
  }
+ @PostMapping("/update")
+ public ResponseEntity<Faculty> update(@RequestBody Faculty f){
+	 f = FacultyDAO.update(f);
+     return new ResponseEntity<Faculty>(f,HttpStatus.OK);
+ }
+ 
+ @PostMapping("/login")
+ public ResponseEntity<Faculty> login(@RequestBody Faculty f){
+	 f = FacultyDAO.login(f);
+	 if(f!=null)
+		 return new ResponseEntity<Faculty>(f,HttpStatus.OK);
+	 return new ResponseEntity<Faculty>(f,HttpStatus.NOT_FOUND);
+ }
 }

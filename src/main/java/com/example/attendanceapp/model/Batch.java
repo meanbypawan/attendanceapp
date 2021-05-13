@@ -9,7 +9,7 @@ public class Batch {
 	private String startDate;
 	private String endDate;
 	private int fid;
-
+    private String status;
 	public Batch() {
 	}
 
@@ -36,6 +36,14 @@ public class Batch {
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.fid = fid;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public int getId() {
