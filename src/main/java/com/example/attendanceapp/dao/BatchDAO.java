@@ -58,7 +58,7 @@ public class BatchDAO {
 	      int maxId = 0;
 		  if(rs.next())
 			  maxId = rs.getInt(1);
-	      sql = "insert into batch(id,batch_time,batch_subject,to_time,from_time,start_date,end_date,fid,satus) values(?,?,?,?,?,?,?,?,?)";
+	      sql = "insert into batch(id,batch_time,batch_subject,to_time,from_time,start_date,end_date,fid,status) values(?,?,?,?,?,?,?,?,?)";
 	      PreparedStatement ps2= con.prepareStatement(sql);
 	      ps2.setInt(1, maxId+1);
 	      ps2.setString(2, b.getBatchTime());
