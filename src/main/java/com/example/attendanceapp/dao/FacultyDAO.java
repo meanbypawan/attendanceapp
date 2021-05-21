@@ -67,9 +67,10 @@ public class FacultyDAO {
   }
   public static Faculty create(Faculty f) {
 	Connection con = null;
+	 int maxId = 0;
+		
 	try {
 		con = GetConnection.getConnection();
-		 int maxId = 0;
 		synchronized (Faculty.class) {
 		  String sql = "select max(id) from faculty";
 		  PreparedStatement ps = con.prepareStatement(sql);
